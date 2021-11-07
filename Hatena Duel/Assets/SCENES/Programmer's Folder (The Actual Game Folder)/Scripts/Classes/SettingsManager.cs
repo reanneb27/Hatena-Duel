@@ -16,7 +16,7 @@ public static class SettingsManager
     /// <summary>
     /// Updates the globally accessible static class Settings with the new setting values defined in the SettingsSerializer parameter and automatically writes it to settings.json file
     /// </summary>
-    /// <param name="newSettings"></param>
+    /// <param name="newSettings"></param>  
     public static void UpdateSettings(SettingsSerializer newSettings)
     {
         Settings.BGMusicVolume = newSettings.BGMusicVolume;
@@ -40,7 +40,7 @@ public static class SettingsManager
         }
         Settings.Fullscreen = newSettings.Fullscreen;
 
-        SaveSettingsToJsonFile();
+        UpdateSettingsToJsonFile();
     }
     public static bool IsValidKeySettingChange(KeyCode newKey, SettingsSerializer newSetting = null)
     {
@@ -48,7 +48,7 @@ public static class SettingsManager
             newSetting = SettingsSerializer.CreateFromSettings();
         return !UsedKeys(newSetting).Contains(newKey);
     }
-    private static void SaveSettingsToJsonFile()
+    private static void UpdateSettingsToJsonFile()
     {
         File.WriteAllText(SettingsFilePath, SettingsSerializer.CreateFromSettings().ToJsonString());
     }

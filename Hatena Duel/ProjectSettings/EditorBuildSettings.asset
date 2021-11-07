@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SCENES/Programmer's Folder (The Actual Game Folder)/Scenes/MainMenu/MainMenu.unity
     guid: 4017cdcc3455ad74faa214726db098dc
+  - enabled: 1
+    path: Assets/SCENES/Programmer's Folder (The Actual Game Folder)/Scenes/Lore/Lore.unity
+    guid: 8fcf0d98530d1ff48b5a85666e3823bd
+  - enabled: 1
+    path: Assets/SCENES/Programmer's Folder (The Actual Game Folder)/Scenes/CharacterSelect/CharacterSelect.unity
+    guid: 4a9a00fab2d1206429a9783be76fa9d2
   m_configObjects: {}

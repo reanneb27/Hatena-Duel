@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af715989fad87fa4b96e4f160686efb1
+guid: 4d8d0b7183ff647469b37e9fc708b501
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -112,12 +112,12 @@ TextureImporter:
       name: kingHaul_idle_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 594
-        width: 108
-        height: 261
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 576
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +133,12 @@ TextureImporter:
       name: kingHaul_idle_1
       rect:
         serializedVersion: 2
-        x: 369
-        y: 594
-        width: 108
-        height: 252
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 288
+        y: 576
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: kingHaul_idle_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 306
-        width: 108
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 288
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: kingHaul_idle_3
       rect:
         serializedVersion: 2
-        x: 369
-        y: 306
-        width: 108
-        height: 243
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 288
+        y: 288
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: kingHaul_idle_4
       rect:
         serializedVersion: 2
-        x: 81
-        y: 18
-        width: 108
-        height: 252
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: kingHaul_idle_5
       rect:
         serializedVersion: 2
-        x: 369
-        y: 16
-        width: 108
-        height: 261
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 288
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

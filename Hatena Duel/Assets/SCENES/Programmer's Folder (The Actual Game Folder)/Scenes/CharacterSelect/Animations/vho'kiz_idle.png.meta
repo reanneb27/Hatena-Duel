@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: af715989fad87fa4b96e4f160686efb1
+guid: 32362260ccd6d544cb62e4f8d9c8cd75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3361038682597876354
-    second: kingHaul_idle_0
+      213: 72293332830333247
+    second: vho'kiz_idle_0
   - first:
-      213: -2174354015676910654
-    second: kingHaul_idle_1
+      213: -3515301175280641961
+    second: vho'kiz_idle_1
   - first:
-      213: 8780270071440811082
-    second: kingHaul_idle_2
+      213: -3865290115356870389
+    second: vho'kiz_idle_2
   - first:
-      213: -5004127522713877068
-    second: kingHaul_idle_3
+      213: -8986683460152142344
+    second: vho'kiz_idle_3
   - first:
-      213: 8083602790094770136
-    second: kingHaul_idle_4
+      213: -3540026678734455623
+    second: vho'kiz_idle_4
   - first:
-      213: -155585943115938685
-    second: kingHaul_idle_5
+      213: -875708070917102140
+    second: vho'kiz_idle_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,127 +109,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kingHaul_idle_0
+      name: vho'kiz_idle_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 594
-        width: 108
-        height: 261
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 576
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 282e790dfdec4ae20800000000000000
-      internalID: 3361038682597876354
+      spriteID: f392bf63766d00100800000000000000
+      internalID: 72293332830333247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingHaul_idle_1
+      name: vho'kiz_idle_1
       rect:
         serializedVersion: 2
-        x: 369
-        y: 594
-        width: 108
-        height: 252
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 288
+        y: 576
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c332affa8423d1e0800000000000000
-      internalID: -2174354015676910654
+      spriteID: 75852e8b434273fc0800000000000000
+      internalID: -3515301175280641961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingHaul_idle_2
+      name: vho'kiz_idle_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 306
-        width: 108
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 288
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4429303c19c9d970800000000000000
-      internalID: 8780270071440811082
+      spriteID: b0933588e1bbb5ac0800000000000000
+      internalID: -3865290115356870389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingHaul_idle_3
+      name: vho'kiz_idle_3
       rect:
         serializedVersion: 2
-        x: 369
-        y: 306
-        width: 108
-        height: 243
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 288
+        y: 288
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b542e5f784cd8ab0800000000000000
-      internalID: -5004127522713877068
+      spriteID: 8f5d0c8a103e84380800000000000000
+      internalID: -8986683460152142344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingHaul_idle_4
+      name: vho'kiz_idle_4
       rect:
         serializedVersion: 2
-        x: 81
-        y: 18
-        width: 108
-        height: 252
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df84f8a8e9be2070800000000000000
-      internalID: 8083602790094770136
+      spriteID: 9bc70a6dd7c4fdec0800000000000000
+      internalID: -3540026678734455623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingHaul_idle_5
+      name: vho'kiz_idle_5
       rect:
         serializedVersion: 2
-        x: 369
-        y: 16
-        width: 108
-        height: 261
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 288
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384c788b86f37ddf0800000000000000
-      internalID: -155585943115938685
+      spriteID: 4c52b02362cd8d3f0800000000000000
+      internalID: -875708070917102140
       vertices: []
       indices: 
       edges: []
