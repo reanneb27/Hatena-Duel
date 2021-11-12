@@ -28,6 +28,9 @@ public class CharacterSelectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SelectedCharacter = Character.PrinceHaul;
+        SelectedArena = Arena.Heaven;
+
         // TODO: set the character buttons interactable here based on the Save.cs values, as well as the arena indicate if completed based on the Save.cs values
     }
 
