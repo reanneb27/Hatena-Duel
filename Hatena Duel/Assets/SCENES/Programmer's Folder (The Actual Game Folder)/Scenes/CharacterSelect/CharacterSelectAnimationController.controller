@@ -10,14 +10,14 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -5042015695290737874}
-    m_Position: {x: 310, y: 210, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -70845852047827103}
     m_Position: {x: 310, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -36253613877295357}
     m_Position: {x: 310, y: 350, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5409512451336189822}
+    m_Position: {x: 310, y: 210, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -27,7 +27,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -5042015695290737874}
+  m_DefaultState: {fileID: -5409512451336189822}
 --- !u!1109 &-5665735078982999983
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -42,14 +42,14 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 1
---- !u!1102 &-5042015695290737874
+--- !u!1102 &-5409512451336189822
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: kingHaul_idle_anim
+  m_Name: princeHaul_idle_anim
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

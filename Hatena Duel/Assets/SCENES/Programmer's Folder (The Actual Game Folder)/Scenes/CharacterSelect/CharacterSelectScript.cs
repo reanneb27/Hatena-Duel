@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum Character
 {
-    KingHaul, VhoKiz, Arkayn
+    PrinceHaul, VhoKiz, Arkayn
 }
 
 public enum Arena
@@ -19,8 +19,11 @@ public class CharacterSelectScript : MonoBehaviour
     public Animator animController;
     public GameObject SelectedArenaIndicator;
 
-    private Character SelectedCharacter = Character.KingHaul;
-    private Arena SelectedArena = Arena.Heaven;
+    public TextMeshProUGUI CharacterNameTMP;
+    public TextMeshProUGUI CharacterDescTMP;
+
+    public static Character SelectedCharacter = Character.PrinceHaul;
+    public static Arena SelectedArena = Arena.Heaven;
 
     // Start is called before the first frame update
     void Start()
@@ -34,24 +37,30 @@ public class CharacterSelectScript : MonoBehaviour
     }
     public void Continue()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     #region CHARACTER SELECTION METHODS
     public void SelectKingHaul()
     {
-        animController.Play("kingHaul_idle_anim");
-        SelectedCharacter = Character.KingHaul;
+        animController.Play("princeHaul_idle_anim");
+        SelectedCharacter = Character.PrinceHaul;
+
+        SetCharacterPreviewTexts("Prince Haul", "The son of King Fulchard");
     }
     public void SelectArkayn()
     {
         animController.Play("arkayn_idle_anim");
         SelectedCharacter = Character.Arkayn;
+
+        SetCharacterPreviewTexts("Arkayn", "Leads the Heaven world. He guards the sapphire stone");
     }
     public void SelectVhoKiz()
     {
         animController.Play("vho'kiz_idle_anim");
         SelectedCharacter = Character.VhoKiz;
+
+        SetCharacterPreviewTexts("Vho’kiz", "Leads the Void world. He guards the ruby stone");
     }
     #endregion
 
@@ -85,6 +94,17 @@ public class CharacterSelectScript : MonoBehaviour
         Vector3 prevPos = SelectedArenaIndicator.GetComponent<RectTransform>().anchoredPosition;
         prevPos.x = x;
         SelectedArenaIndicator.GetComponent<RectTransform>().anchoredPosition = prevPos;
+    }
+
+    /// <summary>
+    /// Sets the character preview text UIs
+    /// </summary>
+    /// <param name="charName"></param>
+    /// <param name="charDesc"></param>
+    private void SetCharacterPreviewTexts(string charName, string charDesc)
+    {
+        CharacterNameTMP.text = charName;
+        CharacterDescTMP.text = charDesc;
     }
     #endregion
 }

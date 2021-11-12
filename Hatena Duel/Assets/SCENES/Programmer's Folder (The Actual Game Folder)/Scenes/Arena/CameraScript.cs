@@ -79,30 +79,36 @@ public class CameraScript : MonoBehaviour
         float PlayersVerticalDistance = Vector3.Distance(new Vector3(0, P1.transform.position.y), new Vector3(0, P2.transform.position.y))
             + P1.GetComponent<SpriteRenderer>().bounds.size.y + P2.GetComponent<SpriteRenderer>().bounds.size.y;
 
+        float newCamWidth = CamWidth;
+        float newCamHeight = CamHeight;
         if (PlayersHorizontalDistance > CamWidth)
         {
-            CamWidth = PlayersHorizontalDistance;
+            newCamWidth = PlayersHorizontalDistance;
 
         }
         else if (PlayersVerticalDistance > CamHeight)
         {
-            CamHeight = PlayersVerticalDistance;
+            newCamHeight = PlayersVerticalDistance;
         }
         else
         {
             if (PlayersHorizontalDistance > MinCamWidth)
             {
-                CamWidth = PlayersHorizontalDistance;
+                newCamWidth = PlayersHorizontalDistance;
                 if (PlayersVerticalDistance > CamHeight)
-                    CamHeight = PlayersVerticalDistance;
+                    newCamHeight = PlayersVerticalDistance;
             }
             else if (PlayersVerticalDistance > MinCamHeight)
             {
-                CamHeight = PlayersVerticalDistance;
+                newCamHeight = PlayersVerticalDistance;
                 if (PlayersHorizontalDistance > CamWidth)
-                    CamWidth = PlayersHorizontalDistance;
+                    newCamWidth = PlayersHorizontalDistance;
             }
         }
+
+        // resize camera
+        CamWidth = Mathf.Lerp(CamWidth, newCamWidth, Time.deltaTime * EaseSpeed);
+        CamHeight = Mathf.Lerp(CamHeight, newCamHeight, Time.deltaTime * EaseSpeed);
 
         // cemter camera between the 2 players
         Vector3 prevPos = cam.transform.position;
