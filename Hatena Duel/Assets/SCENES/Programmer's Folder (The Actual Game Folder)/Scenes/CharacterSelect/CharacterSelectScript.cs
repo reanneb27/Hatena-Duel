@@ -22,7 +22,21 @@ public class CharacterSelectScript : MonoBehaviour
     public TextMeshProUGUI CharacterNameTMP;
     public TextMeshProUGUI CharacterDescTMP;
 
-    public static Character SelectedCharacter = Character.PrinceHaul;
+    // character skills
+    public TextMeshProUGUI Skill1NameTMP;
+    public TextMeshProUGUI Skill1DescTMP;
+
+    public TextMeshProUGUI Skill2NameTMP;
+    public TextMeshProUGUI Skill2DescTMP;
+
+    public TextMeshProUGUI Skill3NameTMP;
+    public TextMeshProUGUI Skill3DescTMP;
+
+    public TextMeshProUGUI UltimateNameTMP;
+    public TextMeshProUGUI UltimateDescTMP;
+
+    // default character/arena selection
+    public static Character SelectedCharacter = Character.VhoKiz; // temporary; prince haul is supposed to be the default
     public static Arena SelectedArena = Arena.Heaven;
 
     // Start is called before the first frame update
@@ -31,6 +45,8 @@ public class CharacterSelectScript : MonoBehaviour
         SelectedCharacter = Character.PrinceHaul;
         SelectedArena = Arena.Heaven;
 
+        // default selection
+        //SelectKingHaul();
         // TODO: set the character buttons interactable here based on the Save.cs values, as well as the arena indicate if completed based on the Save.cs values
     }
 
@@ -50,6 +66,12 @@ public class CharacterSelectScript : MonoBehaviour
         SelectedCharacter = Character.PrinceHaul;
 
         SetCharacterPreviewTexts("Prince Haul", "The son of King Fulchard");
+
+        // set skill info
+        SetSkill1Text("Boomerang", "Can use immediately after the boomerang returns");
+        SetSkill2Text("Shield", "Invulnerable for some time");
+        SetSkill3Text("Copy Cat", "Gets a random non-ultimate ability from the enemy");
+        SetUltimateText("Adrenaline Rush", "Cooldown is greatly decreased");
     }
     public void SelectArkayn()
     {
@@ -57,6 +79,12 @@ public class CharacterSelectScript : MonoBehaviour
         SelectedCharacter = Character.Arkayn;
 
         SetCharacterPreviewTexts("Arkayn", "Leads the Heaven world. He guards the sapphire stone");
+
+        // set skill info
+        SetSkill1Text("Hell's Flames", "Ignites the ground, dealing damage over time");
+        SetSkill2Text("Heaven's Gate", "Creates a wall that only Arkayn can jump over");
+        SetSkill3Text("Acid Rain", "Rains acid for 3 seconds at a specified spot");
+        SetUltimateText("Divine Intervention", "Heals until rage is depleted. If Arkayn dies during ultimate, he revives half health and 0 rage.");
     }
     public void SelectVhoKiz()
     {
@@ -64,6 +92,12 @@ public class CharacterSelectScript : MonoBehaviour
         SelectedCharacter = Character.VhoKiz;
 
         SetCharacterPreviewTexts("Vho’kiz", "Leads the Void world. He guards the ruby stone");
+
+        // set skill info
+        SetSkill1Text(VhoKizScript.Skill1, VhoKizScript.Skill1Desc);
+        SetSkill2Text(VhoKizScript.Skill2, VhoKizScript.Skill2Desc);
+        SetSkill3Text(VhoKizScript.Skill3, VhoKizScript.Skill3Desc);
+        SetUltimateText(VhoKizScript.UltimateSkill, VhoKizScript.UltimateSkillDesc);
     }
     #endregion
 
@@ -108,6 +142,26 @@ public class CharacterSelectScript : MonoBehaviour
     {
         CharacterNameTMP.text = charName;
         CharacterDescTMP.text = charDesc;
+    }
+    private void SetSkill1Text(string skillName, string skillDesc)
+    {
+        Skill1NameTMP.text = skillName;
+        Skill1DescTMP.text = skillDesc;
+    }
+    private void SetSkill2Text(string skillName, string skillDesc)
+    {
+        Skill2NameTMP.text = skillName;
+        Skill2DescTMP.text = skillDesc;
+    }
+    private void SetSkill3Text(string skillName, string skillDesc)
+    {
+        Skill3NameTMP.text = skillName;
+        Skill3DescTMP.text = skillDesc;
+    }
+    private void SetUltimateText(string skillName, string skillDesc)
+    {
+        UltimateNameTMP.text = skillName;
+        UltimateDescTMP.text = skillDesc;
     }
     #endregion
 }

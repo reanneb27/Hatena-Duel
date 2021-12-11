@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VhoKizScript : MonoBehaviour
+public partial class VhoKizScript : CharacterBase
 {
-    private float moveSpeed = 17f;
-    private float jumpForce = 25f;
-
-
-    private int currentJumpCount = 0;
-    private int maxJumpCount = 2;
-    private bool isGrounded = true;
-
     private Rigidbody2D RB2D;
     private Animator animator;
     private SpriteRenderer SR;
@@ -21,19 +13,42 @@ public class VhoKizScript : MonoBehaviour
         IDLE, RUNNING, JUMPING, FALLING
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
-    }
 
-    // Update is called once per frame
-    void Update()
+        // init character attribs
+        characterName = "Vho'Kiz";
+
+        moveSpeed = 17f;
+        jumpForce = 25f;
+
+        currentJumpCount = 0;
+        maxJumpCount = 2;
+        isGrounded = true;
+
+        Skill1Cooldown = 2;
+        Skill2Cooldown = 3;
+        Skill3Cooldown = 5;
+        UltimateSkillDuration = 5;
+
+        Skill1Name = Skill1;
+        Skill2Name = Skill2;
+        Skill3Name = Skill3;
+        UltimateSkillName = UltimateSkill;
+
+        maxHealth = 1000;
+        health = 1000;
+        maxRage = 100;
+        rage = 0;
+}
+
+    protected override void Movement()
     {
         // left and right
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(PlayerSettings.LeftKey))
         {
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
             SR.flipX = true;
@@ -41,7 +56,7 @@ public class VhoKizScript : MonoBehaviour
             if (isGrounded)
                 ChangeAnimationState(VhoKizState.RUNNING);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(PlayerSettings.RightKey))
         {
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
             SR.flipX = false;
@@ -56,7 +71,7 @@ public class VhoKizScript : MonoBehaviour
         }
 
         // jump
-        if (Input.GetKeyDown(KeyCode.Space) && currentJumpCount < maxJumpCount)
+        if (Input.GetKeyDown(PlayerSettings.JumpKey) && currentJumpCount < maxJumpCount)
         {
             RB2D.velocity = new Vector2();
             RB2D.angularVelocity = 0;
@@ -106,7 +121,25 @@ public class VhoKizScript : MonoBehaviour
         }
         else
         {
-            Debug.Log(collision.gameObject.name);
+            if (collision.gameObject.tag != "Wall")
+            {
+                Physics2D.IgnoreCollision(collision.collider, GetComponent<BoxCollider2D>());
+                Debug.Log("IGNORED BECAUSE NOT GROUND/WALL");
+            }
+            else
+                Debug.Log(collision.gameObject.name);
         }
     }
+
+    
+
+    // skill info
+    public static string Skill1 = "Conscious Missiles";
+    public static string Skill2 = "Magnetic Star";
+    public static string Skill3 = "Supernova";
+    public static string UltimateSkill = "Control Matter";
+    public static string Skill1Desc = "Decreases CD by 80% if enemy is hit.";
+    public static string Skill2Desc = "Follows the opponent faster if far, slower if near, for 4 seconds.";
+    public static string Skill3Desc = "Fires a laser at the direction of the Vhokiz to the cursor.";
+    public static string UltimateSkillDesc = "Skills become bigger; Vhokiz movements are enhanced.";
 }

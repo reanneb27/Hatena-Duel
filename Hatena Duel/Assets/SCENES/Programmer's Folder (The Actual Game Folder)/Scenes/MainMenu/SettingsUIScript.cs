@@ -16,8 +16,9 @@ public class SettingsUIScript : MonoBehaviour
     public Button MoveUpButton;
     public Button MoveRightButton;
     public Button MoveDownButton;
-    public Button LightAttButton;
-    public Button HeavyAttButton;
+    public Button Skill1Button;
+    public Button Skill2Button;
+    public Button Skill3Button;
     public Button UltimateAttButton;
     public Toggle FullscreenToggle;
 
@@ -33,8 +34,9 @@ public class SettingsUIScript : MonoBehaviour
         MoveUpButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.JumpKey.ToString();
         MoveRightButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.RightKey.ToString();
         MoveDownButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.GroundKey.ToString();
-        LightAttButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.LightAttKey.ToString();
-        HeavyAttButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.HeavyAttKey.ToString();
+        Skill1Button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.Skill1Key.ToString();
+        Skill2Button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.Skill2Key.ToString();
+        Skill3Button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.Skill3Key.ToString();
         UltimateAttButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = prevSettings.UltimateAttKey.ToString();
         FullscreenToggle.isOn = prevSettings.Fullscreen;
     }
@@ -106,12 +108,15 @@ public class SettingsUIScript : MonoBehaviour
                                 Settings.GroundKey = currentKeyDownPressed;
                                 break;
                             case 4:
-                                Settings.LightAttKey = currentKeyDownPressed;
+                                Settings.Skill1Key = currentKeyDownPressed;
                                 break;
                             case 5:
-                                Settings.HeavyAttKey = currentKeyDownPressed;
+                                Settings.Skill2Key = currentKeyDownPressed;
                                 break;
                             case 6:
+                                Settings.Skill3Key = currentKeyDownPressed;
+                                break;
+                            case 7:
                                 Settings.UltimateAttKey = currentKeyDownPressed;
                                 break;
                             default:

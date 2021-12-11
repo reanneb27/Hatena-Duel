@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
     // https://answers.unity.com/questions/230190/how-to-get-the-width-and-height-of-a-orthographic.html
     // https://answers.unity.com/questions/215553/smoother-camera-movement.html
 
-    Camera cam = Camera.main;
+    Camera cam;
     public float EaseSpeed = 5;
     GameObject P1;
     GameObject P2;

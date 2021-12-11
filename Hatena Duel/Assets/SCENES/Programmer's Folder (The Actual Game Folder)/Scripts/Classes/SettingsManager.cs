@@ -27,8 +27,9 @@ public static class SettingsManager
         Settings.RightKey = newSettings.RightKey;
         Settings.GroundKey = newSettings.GroundKey;
 
-        Settings.LightAttKey = newSettings.LightAttKey;
-        Settings.HeavyAttKey = newSettings.HeavyAttKey;
+        Settings.Skill1Key = newSettings.Skill1Key;
+        Settings.Skill2Key = newSettings.Skill2Key;
+        Settings.Skill3Key = newSettings.Skill3Key;
         Settings.UltimateAttKey = newSettings.UltimateAttKey;
 
         if (Settings.Fullscreen == newSettings.Fullscreen)
@@ -59,8 +60,9 @@ public static class SettingsManager
         usedKeys.Add(setting.JumpKey);
         usedKeys.Add(setting.RightKey);
         usedKeys.Add(setting.GroundKey);
-        usedKeys.Add(setting.LightAttKey);
-        usedKeys.Add(setting.HeavyAttKey);
+        usedKeys.Add(setting.Skill1Key);
+        usedKeys.Add(setting.Skill2Key);
+        usedKeys.Add(setting.Skill3Key);
         usedKeys.Add(setting.UltimateAttKey);
         return usedKeys;
     }
@@ -79,8 +81,9 @@ public class SettingsSerializer
     public KeyCode RightKey;
     public KeyCode GroundKey;
 
-    public KeyCode LightAttKey;
-    public KeyCode HeavyAttKey;
+    public KeyCode Skill1Key;
+    public KeyCode Skill2Key;
+    public KeyCode Skill3Key;
     public KeyCode UltimateAttKey;
 
     public bool Fullscreen;
@@ -105,8 +108,9 @@ public class SettingsSerializer
             RightKey = Settings.RightKey,
             GroundKey = Settings.GroundKey,
 
-            LightAttKey = Settings.LightAttKey,
-            HeavyAttKey = Settings.HeavyAttKey,
+            Skill1Key = Settings.Skill1Key,
+            Skill2Key = Settings.Skill2Key,
+            Skill3Key = Settings.Skill3Key,
             UltimateAttKey = Settings.UltimateAttKey,
 
             Fullscreen = Settings.Fullscreen

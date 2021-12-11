@@ -12,9 +12,10 @@ public static class Settings
     public static KeyCode RightKey = KeyCode.D;
     public static KeyCode GroundKey = KeyCode.S;
 
-    public static KeyCode LightAttKey = KeyCode.C;
-    public static KeyCode HeavyAttKey = KeyCode.V;
-    public static KeyCode UltimateAttKey = KeyCode.B;
+    public static KeyCode Skill1Key = KeyCode.C;
+    public static KeyCode Skill2Key = KeyCode.V;
+    public static KeyCode Skill3Key = KeyCode.B;
+    public static KeyCode UltimateAttKey = KeyCode.N;
 
     public static bool Fullscreen = true;
 }
