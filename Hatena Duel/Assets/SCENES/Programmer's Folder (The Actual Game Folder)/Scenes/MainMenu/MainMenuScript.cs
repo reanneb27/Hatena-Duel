@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
+    MenuAudioManagerScript MenuAudio;
+
     public GameObject ExitConfirmDialog;
     public GameObject OverwriteSaveFileDialog;
     public Button ContinueButton;
@@ -13,6 +15,9 @@ public class MainMenuScript : MonoBehaviour
 
     public void Start()
     {
+        MenuAudio = FindObjectOfType<MenuAudioManagerScript>();
+        MenuAudio.Play("main_menu_bg");
+
         ContinueButton.interactable = SaveFileExists;
     }
 

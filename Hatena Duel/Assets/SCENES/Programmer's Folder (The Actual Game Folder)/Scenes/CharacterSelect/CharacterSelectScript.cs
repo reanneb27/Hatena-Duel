@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum Character
 {
@@ -19,35 +20,53 @@ public class CharacterSelectScript : MonoBehaviour
     public Animator animController;
     public GameObject SelectedArenaIndicator;
 
+    // Button fields
+    public Button ArkaynButton;
+    public GameObject ArkaynXImage;
+    public Button VhokizButton;
+    public GameObject VhokizXImage;
+
     public TextMeshProUGUI CharacterNameTMP;
     public TextMeshProUGUI CharacterDescTMP;
 
     // character skills
     public TextMeshProUGUI Skill1NameTMP;
     public TextMeshProUGUI Skill1DescTMP;
+    public Image Skill1SpriteUI;
 
     public TextMeshProUGUI Skill2NameTMP;
     public TextMeshProUGUI Skill2DescTMP;
+    public Image Skill2SpriteUI;
 
     public TextMeshProUGUI Skill3NameTMP;
     public TextMeshProUGUI Skill3DescTMP;
+    public Image Skill3SpriteUI;
 
     public TextMeshProUGUI UltimateNameTMP;
     public TextMeshProUGUI UltimateDescTMP;
+    public Image UltimateSpriteUI;
 
     // default character/arena selection
-    public static Character SelectedCharacter = Character.VhoKiz; // temporary; prince haul is supposed to be the default
+    public static Character SelectedCharacter = Character.PrinceHaul;
     public static Arena SelectedArena = Arena.Heaven;
 
+    SkillIconSprites SkillSprites;
     // Start is called before the first frame update
     void Start()
     {
+        SkillSprites = GetComponent<SkillIconSprites>();
         SelectedCharacter = Character.PrinceHaul;
         SelectedArena = Arena.Heaven;
 
         // default selection
-        //SelectKingHaul();
-        // TODO: set the character buttons interactable here based on the Save.cs values, as well as the arena indicate if completed based on the Save.cs values
+        SelectKingHaul();
+
+        // character select Save-based values
+        ArkaynButton.enabled = Save.HeavenStageCompleted;
+        ArkaynXImage.SetActive(!Save.HeavenStageCompleted);
+
+        VhokizButton.enabled = Save.VoidStageCompleted;
+        VhokizXImage.SetActive(!Save.VoidStageCompleted);
     }
 
     public void Back()
@@ -65,31 +84,49 @@ public class CharacterSelectScript : MonoBehaviour
         animController.Play("princeHaul_idle_anim");
         SelectedCharacter = Character.PrinceHaul;
 
+        // set skill icons
+        Skill1SpriteUI.sprite = SkillSprites.PrinceHaulSkill1Icon;
+        Skill2SpriteUI.sprite = SkillSprites.PrinceHaulSkill2Icon;
+        Skill3SpriteUI.sprite = SkillSprites.PrinceHaulSkill3Icon;
+        UltimateSpriteUI.sprite = SkillSprites.PrinceHaulUltimateIcon;
+
         SetCharacterPreviewTexts("Prince Haul", "The son of King Fulchard");
 
         // set skill info
-        SetSkill1Text("Boomerang", "Can use immediately after the boomerang returns");
-        SetSkill2Text("Shield", "Invulnerable for some time");
-        SetSkill3Text("Copy Cat", "Gets a random non-ultimate ability from the enemy");
-        SetUltimateText("Adrenaline Rush", "Cooldown is greatly decreased");
+        SetSkill1Text(PrinceHaulScript.Skill1, PrinceHaulScript.Skill1Desc);
+        SetSkill2Text(PrinceHaulScript.Skill2, PrinceHaulScript.Skill2Desc);
+        SetSkill3Text(PrinceHaulScript.Skill3, PrinceHaulScript.Skill3Desc);
+        SetUltimateText(PrinceHaulScript.UltimateSkill, PrinceHaulScript.UltimateSkillDesc);
     }
     public void SelectArkayn()
     {
         animController.Play("arkayn_idle_anim");
         SelectedCharacter = Character.Arkayn;
 
+        // set skill icons
+        Skill1SpriteUI.sprite = SkillSprites.ArkaynSkill1Icon;
+        Skill2SpriteUI.sprite = SkillSprites.ArkaynSkill2Icon;
+        Skill3SpriteUI.sprite = SkillSprites.ArkaynSkill3Icon;
+        UltimateSpriteUI.sprite = SkillSprites.ArkaynUltimateIcon;
+
         SetCharacterPreviewTexts("Arkayn", "Leads the Heaven world. He guards the sapphire stone");
 
         // set skill info
-        SetSkill1Text("Hell's Flames", "Ignites the ground, dealing damage over time");
-        SetSkill2Text("Heaven's Gate", "Creates a wall that only Arkayn can jump over");
-        SetSkill3Text("Acid Rain", "Rains acid for 3 seconds at a specified spot");
-        SetUltimateText("Divine Intervention", "Heals until rage is depleted. If Arkayn dies during ultimate, he revives half health and 0 rage.");
+        SetSkill1Text(ArkaynScript.Skill1, ArkaynScript.Skill1Desc);
+        SetSkill2Text(ArkaynScript.Skill2, ArkaynScript.Skill2Desc);
+        SetSkill3Text(ArkaynScript.Skill3, ArkaynScript.Skill3Desc);
+        SetUltimateText(ArkaynScript.UltimateSkill, ArkaynScript.UltimateSkillDesc);
     }
     public void SelectVhoKiz()
     {
         animController.Play("vho'kiz_idle_anim");
         SelectedCharacter = Character.VhoKiz;
+
+        // set skill icons
+        Skill1SpriteUI.sprite = SkillSprites.VhokizSkill1Icon;
+        Skill2SpriteUI.sprite = SkillSprites.VhokizSkill2Icon;
+        Skill3SpriteUI.sprite = SkillSprites.VhokizSkill3Icon;
+        UltimateSpriteUI.sprite = SkillSprites.VhokizUltimateIcon;
 
         SetCharacterPreviewTexts("Vho’kiz", "Leads the Void world. He guards the ruby stone");
 

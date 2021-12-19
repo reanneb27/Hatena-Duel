@@ -2,97 +2,141 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArkaynScript : MonoBehaviour
+public partial class ArkaynScript : CharacterBase
 {
-    private float moveSpeed = 8f;
-    private float jumpForce = 5f;
-
-
-    private int currentJumpCount = 0;
-    private int maxJumpCount = 3;
-    private bool isGrounded = true;
-
-    private Rigidbody2D RB2D;
-    private Animator animator;
-    private SpriteRenderer SR;
-
-    private enum ArkaynState
-    {
-        IDLE, RUNNING, JUMPING, FALLING
-    }
+    // players info
+    CharacterBase enemy;
+    string enemyLayer = "Player1"; // player tag is the same as its layer
+    GameObject enemyGameObj;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        AudioManager = FindObjectOfType<ArenaAudioManagerScript>();
+
         animator = GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
+
+        SkillList = new List<GameObject>() { HellsFlames, HeavensGate, AcidRain };
+
+        // init character attribs
+        characterName = "Arkayn";
+
+        moveSpeed = 8f;
+        jumpForce = 5f;
+
+        currentJumpCount = 0;
+        maxJumpCount = 3;
+        isGrounded = true;
+
+        Skill1Cooldown = 3;
+        Skill2Cooldown = 9;
+        Skill3Cooldown = 5;
+        UltimateSkillDuration = 9;
+
+        Skill1Name = Skill1;
+        Skill2Name = Skill2;
+        Skill3Name = Skill3;
+        UltimateSkillName = UltimateSkill;
+
+        maxHealth = 800;
+        health = 800;
+        maxRage = 100;
+        rage = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        // left and right
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-            SR.flipX = true;
+        if (gameObject.tag == "Player1")
+            enemyLayer = "Player2";
+        enemyGameObj = GameObject.FindGameObjectWithTag(enemyLayer);
+        enemy = enemyGameObj.GetComponent<CharacterBase>();
+    }
 
-            if (isGrounded)
-                ChangeAnimationState(ArkaynState.RUNNING);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-            SR.flipX = false;
+    bool moveToLeft;
+    float actionFinishTime;
+    int branchCount = 0;
+    bool toggled = true;
+    protected override void AIUpdate()
+    {
+        Vector2 yourPos = transform.position + new Vector3(0, SR.size.y / 2);
+        Vector2 enemyPos = enemyGameObj.transform.position + new Vector3(0, enemy.SR.size.y / 2);
 
-            if (isGrounded)
-                ChangeAnimationState(ArkaynState.RUNNING);
-        }
-        else
+        if (toggled) // paused
         {
-            if (isGrounded)
-                ChangeAnimationState(ArkaynState.IDLE);
+            if (Time.time > actionFinishTime)
+            {
+                if (branchCount == 1)
+                {
+                    toggled = !toggled;
+                    branchCount = 0;
+                }
+                else
+                {
+                    actionFinishTime = Time.time + Random.Range(1, 7);
+                    branchCount++;
+                }
+            }
+            else if (Time.time <= actionFinishTime)
+            {
+
+            }
+        }
+        else // moving
+        {
+            if (Time.time > actionFinishTime)
+            {
+                if (isGrounded)
+                    ChangeAnimationState(CharacterState.IDLE);
+                if (branchCount == 1)
+                {
+                    toggled = !toggled;
+                    branchCount = 0;
+                }
+                else
+                {
+                    moveToLeft = Random.Range(1, 10) < 5;
+                    actionFinishTime = Time.time + Random.Range(1, 3);
+                    branchCount++;
+                }
+            }
+            else if (Time.time <= actionFinishTime)
+            {
+                if (moveToLeft)
+                    MoveLeft();
+                else
+                    MoveRight();
+            }
+            else
+                if (isGrounded)
+                ChangeAnimationState(CharacterState.IDLE);
         }
 
-        // jump
-        if (Input.GetKeyDown(KeyCode.Space) && currentJumpCount < maxJumpCount)
-        {
-            RB2D.velocity = new Vector2();
-            RB2D.angularVelocity = 0;
-            RB2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
-            currentJumpCount += 1;
-            ChangeAnimationState(ArkaynState.JUMPING);
-        }
+        // random 3/1000% chance jump
+        if (Random.Range(1, 1000) <= 3 && currentJumpCount < maxJumpCount)
+            DoJump();
 
         // falling
         if (RB2D.velocity.y < 0 && !isGrounded)
-        {
-            ChangeAnimationState(ArkaynState.FALLING);
-        }
+            ChangeAnimationState(CharacterState.FALLING);
+
+
+        SR.flipX = enemyPos.x < yourPos.x;
+        // attacking
+        if (Time.time > NextSkill1Time)
+            DoSkill1();
+        if (Time.time > NextSkill2Time)
+            if (Random.Range(1, 1000) <= 5)
+                DoSkill2();
+        if (Time.time > NextSkill3Time)
+            DoSkill3();
+        if (!UltimateSkillIsRunning && rage >= maxRage)
+            DoUltimate();
+        if (UltimateSkillIsRunning)
+            DoingUltimate();
     }
 
-    private void ChangeAnimationState(ArkaynState state)
-    {
-        switch (state)
-        {
-            case ArkaynState.IDLE:
-                animator.Play("arkayn_idle");
-                break;
-            case ArkaynState.RUNNING:
-                animator.Play("arkayn_run");
-                break;
-            case ArkaynState.JUMPING:
-                animator.Play("arkayn_jump");
-                break;
-            case ArkaynState.FALLING:
-                animator.Play("arkayn_fall");
-                break;
-            default:
-                break;
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -101,14 +145,17 @@ public class ArkaynScript : MonoBehaviour
         {
             isGrounded = true;
             currentJumpCount = 0;
-            ChangeAnimationState(ArkaynState.IDLE);
-            Debug.Log("collided!");
-        }
-        else
-        {
-            Debug.Log(collision.gameObject.name);
+            ChangeAnimationState(CharacterState.IDLE);
         }
     }
 
-
+    // skill info
+    public static string Skill1 = "Hell's Flames";
+    public static string Skill2 = "Heaven's Gate";
+    public static string Skill3 = "Acid Rain";
+    public static string UltimateSkill = "Divine Intervention";
+    public static string Skill1Desc = "Ignites the ground, dealing damage over time.";
+    public static string Skill2Desc = "Creates a wall that blocks the path.";
+    public static string Skill3Desc = "Rains acid. Enemy be damaged while Arkayn will heal under the rain.";
+    public static string UltimateSkillDesc = "Heals until rage is depleted. If Arkayn dies during ultimate, he revives with half health and 0 rage.";
 }

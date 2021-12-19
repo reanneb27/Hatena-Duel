@@ -98,8 +98,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fa07ee1a48cf74b80c1ed5552ef202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSettings:
+    BGMusicVolume: 0
+    SFXVolume: 0
+    LeftKey: 0
+    JumpKey: 0
+    RightKey: 0
+    GroundKey: 0
+    Skill1Key: 0
+    Skill2Key: 0
+    Skill3Key: 0
+    UltimateAttKey: 0
+    Fullscreen: 0
+  characterName: 
   moveSpeed: 10
   jumpForce: 10
+  currentJumpCount: 0
+  maxJumpCount: 0
+  isGrounded: 0
+  maxHealth: 0
+  health: 0
+  maxRage: 100
+  rage: 0
+  SkillList: []
+  Skill1Cooldown: 0
+  Skill2Cooldown: 0
+  Skill3Cooldown: 0
+  UltimateSkillDuration: 0
+  NextSkill1Time: 0
+  NextSkill2Time: 0
+  NextSkill3Time: 0
+  UltimateFinishTime: 0
+  Skill1IsOnCD: 0
+  Skill2IsOnCD: 0
+  Skill3IsOnCD: 0
+  UltimateSkillIsRunning: 0
+  Skill1Name: 
+  Skill2Name: 
+  Skill3Name: 
+  UltimateSkillName: 
+  Boomerang: {fileID: 4654048674301203268, guid: aff38d8f93c463c4186e277ee8cabc79, type: 3}
+  Endure: {fileID: 7037249801966761808, guid: 82e53022da0b1484cb22597ac567a31c, type: 3}
+  enduring: 0
+  CopyCat: {fileID: 0}
+  StolenSkill: {fileID: 0}
+  CDDecreaseFactor: 0.5
+  tempSkill1CDVar: 0
+  tempSkill2CDVar: 0
+  tempSkill3CDVar: 0
 --- !u!95 &6396120953009052939
 Animator:
   serializedVersion: 3
@@ -137,7 +183,7 @@ Rigidbody2D:
   m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &6396120953009052941

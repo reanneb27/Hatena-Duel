@@ -123,7 +123,7 @@ Rigidbody2D:
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &3773882113723327480
@@ -164,3 +164,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf30de8a01db8a499c8bcdf5456f690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSettings:
+    BGMusicVolume: 0
+    SFXVolume: 0
+    LeftKey: 0
+    JumpKey: 0
+    RightKey: 0
+    GroundKey: 0
+    Skill1Key: 0
+    Skill2Key: 0
+    Skill3Key: 0
+    UltimateAttKey: 0
+    Fullscreen: 0
+  characterName: 
+  moveSpeed: 0
+  jumpForce: 0
+  currentJumpCount: 0
+  maxJumpCount: 0
+  isGrounded: 0
+  maxHealth: 0
+  health: 0
+  maxRage: 100
+  rage: 0
+  SkillList: []
+  Skill1Cooldown: 0
+  Skill2Cooldown: 0
+  Skill3Cooldown: 0
+  UltimateSkillDuration: 0
+  NextSkill1Time: 0
+  NextSkill2Time: 0
+  NextSkill3Time: 0
+  UltimateFinishTime: 0
+  Skill1IsOnCD: 0
+  Skill2IsOnCD: 0
+  Skill3IsOnCD: 0
+  UltimateSkillIsRunning: 0
+  Skill1Name: 
+  Skill2Name: 
+  Skill3Name: 
+  UltimateSkillName: 
+  HellsFlames: {fileID: 2636461981206966599, guid: f1453da02f0d5e94c8909cf5ec61f9dc, type: 3}
+  HeavensGate: {fileID: 6394209464320225153, guid: d54bd1057dd91e043a98b1a7cb273e8e, type: 3}
+  AcidRain: {fileID: 3487538887579073013, guid: 2cf5a1cf40740d146b629dd4abfb22c8, type: 3}
+  DivineIntervention: {fileID: 4579466221602023297, guid: 90e4c718adee1484bbb23fc21d4469e4, type: 3}

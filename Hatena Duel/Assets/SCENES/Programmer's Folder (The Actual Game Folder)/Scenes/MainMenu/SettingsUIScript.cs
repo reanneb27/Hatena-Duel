@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class SettingsUIScript : MonoBehaviour
 {
+    MenuAudioManagerScript MenuAudio;
+
     public GameObject SettingsDialog;
     public GameObject KeyChangeDialog;
 
@@ -23,6 +25,12 @@ public class SettingsUIScript : MonoBehaviour
     public Toggle FullscreenToggle;
 
     private SettingsSerializer prevSettings;
+
+    void Start()
+    {
+        MenuAudio = FindObjectOfType<MenuAudioManagerScript>();
+    }
+
     public void SettingsClick()
     {
         SettingsDialog.SetActive(true);
@@ -48,6 +56,9 @@ public class SettingsUIScript : MonoBehaviour
     public void SettingsApply()
     {
         SettingsManager.UpdateSettings(SettingsSerializer.CreateFromSettings());
+
+        MenuAudio.UpdateVolume();
+
         SettingsDialog.SetActive(false);
     }
 

@@ -2,96 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrinceHaulScript : MonoBehaviour
+public partial class PrinceHaulScript : CharacterBase
 {
-    public float moveSpeed = 10f;
-    public float jumpForce = 10f;
-
-
-    private int currentJumpCount = 0;
-    private int maxJumpCount = 2;
-    private bool isGrounded = true;
-
-    private Rigidbody2D RB2D;
-    private Animator animator;
-    private SpriteRenderer SR;
-
-    private enum PrinceHaulState
-    {
-        IDLE, RUNNING, JUMPING, FALLING
-    }
-
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        AudioManager = FindObjectOfType<ArenaAudioManagerScript>();
+
         animator = GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // left and right
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-            SR.flipX = true;
+        SkillList = new List<GameObject>() { Boomerang, Endure, CopyCat};
 
-            if (isGrounded)
-                ChangeAnimationState(PrinceHaulState.RUNNING);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-            SR.flipX = false;
+        // init character attribs
+        characterName = "Prince Haul";
 
-            if (isGrounded)
-                ChangeAnimationState(PrinceHaulState.RUNNING);
-        }
-        else
-        {
-            if (isGrounded)
-                ChangeAnimationState(PrinceHaulState.IDLE);
-        }
+        moveSpeed = 10f;
+        jumpForce = 10f;
 
-        // jump
-        if (Input.GetKeyDown(KeyCode.Space) && currentJumpCount < maxJumpCount)
-        {
-            RB2D.velocity = new Vector2();
-            RB2D.angularVelocity = 0;
-            RB2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
-            currentJumpCount += 1;
-            ChangeAnimationState(PrinceHaulState.JUMPING);
-        }
+        currentJumpCount = 0;
+        maxJumpCount = 2;
+        isGrounded = true;
 
-        // falling
-        if (RB2D.velocity.y < 0 && !isGrounded)
-        {
-            ChangeAnimationState(PrinceHaulState.FALLING);
-        }
-    }
+        Skill1Cooldown = 1;
+        Skill2Cooldown = 8;
+        Skill3Cooldown = 4;
+        UltimateSkillDuration = 5;
 
-    private void ChangeAnimationState(PrinceHaulState state)
-    {
-        switch (state)
-        {
-            case PrinceHaulState.IDLE:
-                animator.Play("princeHaul_idle");
-                break;
-            case PrinceHaulState.RUNNING:
-                animator.Play("princeHaul_run");
-                break;
-            case PrinceHaulState.JUMPING:
-                animator.Play("princeHaul_jump");
-                break;
-            case PrinceHaulState.FALLING:
-                animator.Play("princeHaul_fall");
-                break;
-            default:
-                break;
-        }
+        Skill1Name = Skill1;
+        Skill2Name = Skill2;
+        Skill3Name = Skill3;
+        UltimateSkillName = UltimateSkill;
+
+        maxHealth = 1700;
+        health = 1700;
+        maxRage = 100;
+        rage = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -101,8 +48,18 @@ public class PrinceHaulScript : MonoBehaviour
         {
             isGrounded = true;
             currentJumpCount = 0;
-            ChangeAnimationState(PrinceHaulState.IDLE);
+            ChangeAnimationState(CharacterState.IDLE);
         }
     }
 
+
+    // skill info
+    public static string Skill1 = "Boomerang";
+    public static string Skill2 = "Endure";
+    public static string Skill3 = "Copy Cat";
+    public static string UltimateSkill = "Adrenaline Rush";
+    public static string Skill1Desc = "Throws a boomerang, dealing damage on 1st hit and returning hit.";
+    public static string Skill2Desc = "Decrease damage taken by 80% and increase rage taken on hit for some time.";
+    public static string Skill3Desc = "Gets a random non-ultimate ability from the enemy but damage is decreased by 50%.";
+    public static string UltimateSkillDesc = "Cooldown is greatly decreased.";
 }

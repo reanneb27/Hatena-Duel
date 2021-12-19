@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: 216ce941bedd728409663fca7182a580
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1207983847695974351
+    second: arkayn_death_0
+  - first:
+      213: 7735882098974432108
+    second: arkayn_death_1
+  - first:
+      213: 4897390262151342586
+    second: arkayn_death_2
+  - first:
+      213: -5555836192104886628
+    second: arkayn_death_3
+  - first:
+      213: 4575454822624596175
+    second: arkayn_death_4
+  - first:
+      213: 8693840025533508262
+    second: arkayn_death_5
+  - first:
+      213: 2253415889883126257
+    second: arkayn_death_6
+  - first:
+      213: 533467952058421704
+    second: arkayn_death_7
+  - first:
+      213: -911897847941601387
+    second: arkayn_death_8
+  - first:
+      213: 4119948420664628527
+    second: arkayn_death_9
+  - first:
+      213: 3309859524836497994
+    second: arkayn_death_10
+  - first:
+      213: -2655421064431523972
+    second: arkayn_death_11
+  - first:
+      213: 6372224749352281247
+    second: arkayn_death_12
+  - first:
+      213: 185291583643060145
+    second: arkayn_death_13
+  - first:
+      213: 194269693164860414
+    second: arkayn_death_14
+  - first:
+      213: 4401068612834905155
+    second: arkayn_death_15
+  - first:
+      213: -7297296834570384177
+    second: arkayn_death_16
+  - first:
+      213: -2925050209809481744
+    second: arkayn_death_17
+  - first:
+      213: 3514827250003825202
+    second: arkayn_death_18
+  - first:
+      213: -7763451594718047162
+    second: arkayn_death_19
+  - first:
+      213: -5702492742521547111
+    second: arkayn_death_20
+  - first:
+      213: 2296195267900936328
+    second: arkayn_death_21
+  - first:
+      213: 3005015198740331564
+    second: arkayn_death_22
+  - first:
+      213: 1979430120388358024
+    second: arkayn_death_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: arkayn_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1476
+        width: 360
+        height: 288
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1300ca737116c3fe0800000000000000
+      internalID: -1207983847695974351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1475
+        width: 360
+        height: 290
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b9ca558cf5b5b60800000000000000
+      internalID: 7735882098974432108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1476
+        width: 360
+        height: 288
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9ecf5fe7607f340800000000000000
+      internalID: 4897390262151342586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1476
+        width: 360
+        height: 288
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e445b5b64b5e2b0800000000000000
+      internalID: -5555836192104886628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1476
+        width: 360
+        height: 288
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0136c5be74f7f30800000000000000
+      internalID: 4575454822624596175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1116
+        width: 360
+        height: 253
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa6ff7f079b6a870800000000000000
+      internalID: 8693840025533508262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_6
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1116
+        width: 360
+        height: 253
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f954bf00ddb54f10800000000000000
+      internalID: 2253415889883126257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_7
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1116
+        width: 360
+        height: 253
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c15f75a642476700800000000000000
+      internalID: 533467952058421704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_8
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1116
+        width: 360
+        height: 253
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5976ffd1db94853f0800000000000000
+      internalID: -911897847941601387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_9
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1116
+        width: 360
+        height: 253
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2595aa924ffc2930800000000000000
+      internalID: 4119948420664628527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 360
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a925293bbfeed20800000000000000
+      internalID: 3309859524836497994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_11
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 756
+        width: 360
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7728756c9c062bd0800000000000000
+      internalID: -2655421064431523972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_12
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 756
+        width: 360
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f946816e5a0be6850800000000000000
+      internalID: 6372224749352281247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_13
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 756
+        width: 360
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b70aeea6b9429200800000000000000
+      internalID: 185291583643060145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_14
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 756
+        width: 360
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef337b3b14f22b200800000000000000
+      internalID: 194269693164860414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 401
+        width: 360
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c4524e59cb31d30800000000000000
+      internalID: 4401068612834905155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_16
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 401
+        width: 360
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc89d2113bcaba90800000000000000
+      internalID: -7297296834570384177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_17
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 401
+        width: 360
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffbf1ee4522867d0800000000000000
+      internalID: -2925050209809481744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_18
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 401
+        width: 360
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2325753f2cc27c030800000000000000
+      internalID: 3514827250003825202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_19
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 401
+        width: 360
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64414e938eda24490800000000000000
+      internalID: -7763451594718047162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 360
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99692c3501dacd0b0800000000000000
+      internalID: -5702492742521547111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_21
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 40
+        width: 360
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8801b2e2e69bddf10800000000000000
+      internalID: 2296195267900936328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_22
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 40
+        width: 360
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c3199e665f3b920800000000000000
+      internalID: 3005015198740331564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arkayn_death_23
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 39
+        width: 360
+        height: 321
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88fe47ff439587b10800000000000000
+      internalID: 1979430120388358024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

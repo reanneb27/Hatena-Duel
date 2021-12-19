@@ -12,6 +12,10 @@ public class CameraScript : MonoBehaviour
     public float EaseSpeed = 5;
     GameObject P1;
     GameObject P2;
+    SpriteRenderer SR1;
+    SpriteRenderer SR2;
+    Vector3 P1Pos { get { return P1.transform.position; } }
+    Vector3 P2Pos { get { return P2.transform.position; } }
     public float FixedYCam;
     public float MinXCam;
     public float MaxXCam;
@@ -48,36 +52,22 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); // getting main camera method 1
-        cam = Camera.main; // getting main camera method 2
+        cam = Camera.main;
 
         P1 = GameObject.FindGameObjectWithTag("Player1");
         P2 = GameObject.FindGameObjectWithTag("Player2");
+
+        SR1 = P1.GetComponent<SpriteRenderer>();
+        SR2 = P2.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //string name = "Camera";
-        //Debug.Log("Camera Width: " + CamWidth + " Camera Height: " + CamHeight + "\n"
-        //    + name + " Viewport Position: " + transform.position + name + " World Position: " + cam.ViewportToWorldPoint(transform.position));
-
-        //name = "Player 1";
-        //Debug.Log(name + " Width: " + P1.GetComponent<SpriteRenderer>().bounds.size.x + name + " Height: " + P1.GetComponent<SpriteRenderer>().bounds.size.y + "\n"
-        //    + name + " Viewport Position: " + P1.transform.position + name + " World Position: " + cam.ViewportToWorldPoint(P1.transform.position));
-
-        //name = "Player2";
-        //Debug.Log(name + " Width: " + P2.GetComponent<SpriteRenderer>().bounds.size.x + name + " Height: " + P2.GetComponent<SpriteRenderer>().bounds.size.y + "\n"
-        //    + name + " Viewport Position: " + P2.transform.position + name + " World Position: " + cam.ViewportToWorldPoint(P2.transform.position));
-
-        // to get width and height of object use SpriteRenderer.bounds.size.x and ...size.y
-        // there's viewport and world coordinate system.
-        // i also need to add the width/height of the players to fit inside the horizontal distance and vertical distance of the camera-
-        // because the position is at the center of the player
-        float PlayersHorizontalDistance = Vector3.Distance(new Vector3(P1.transform.position.x, 0), new Vector3(P2.transform.position.x, 0))
-            + P1.GetComponent<SpriteRenderer>().bounds.size.x + P2.GetComponent<SpriteRenderer>().bounds.size.x;
-        float PlayersVerticalDistance = Vector3.Distance(new Vector3(0, P1.transform.position.y), new Vector3(0, P2.transform.position.y))
-            + P1.GetComponent<SpriteRenderer>().bounds.size.y + P2.GetComponent<SpriteRenderer>().bounds.size.y;
+        float PlayersHorizontalDistance = Vector3.Distance(new Vector3(P1Pos.x, 0), new Vector3(P2Pos.x, 0))
+            + SR1.size.x + SR2.size.x;
+        float PlayersVerticalDistance = Vector3.Distance(new Vector3(0, P1Pos.y), new Vector3(0, P2Pos.y))
+            + SR1.size.y + SR2.size.y;
 
         float newCamWidth = CamWidth;
         float newCamHeight = CamHeight;
@@ -110,7 +100,7 @@ public class CameraScript : MonoBehaviour
         CamWidth = Mathf.Lerp(CamWidth, newCamWidth, Time.deltaTime * EaseSpeed);
         CamHeight = Mathf.Lerp(CamHeight, newCamHeight, Time.deltaTime * EaseSpeed);
 
-        // cemter camera between the 2 players
+        // center camera between the 2 players
         Vector3 prevPos = cam.transform.position;
         cam.transform.position = Vector3.Lerp(cam.transform.position, (P1.transform.position + P2.transform.position) / 2, Time.deltaTime * EaseSpeed);
         cam.transform.position = new Vector3(cam.transform.position.x, prevPos.y, prevPos.z);

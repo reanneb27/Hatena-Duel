@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1150837752688468587}
   - component: {fileID: 1150837752688468586}
   - component: {fileID: 1150837752688468565}
-  - component: {fileID: -9002239041176463406}
-  - component: {fileID: 4141507850394274863}
+  - component: {fileID: 8069033334358075816}
+  - component: {fileID: -7947149549865217061}
   m_Layer: 0
   m_Name: Supernova
   m_TagString: Untagged
@@ -144,9 +144,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe4b1dcacbcd804fb9639b683d44893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWhoShotTheSupernova: {fileID: 0}
+  PlayerWhoCastedTheSkill: {fileID: 0}
+  damage: 0
+  rage: 0
   lineRenderer: {fileID: 1150837752688468586}
---- !u!114 &-9002239041176463406
+--- !u!65 &8069033334358075816
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150837752688468564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 5.1, z: 1.1}
+  m_Center: {x: 0, y: 2.5, z: 0.5}
+--- !u!114 &-7947149549865217061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,23 +175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGlobal: 1
   priority: 0
-  blendDistance: 0
+  blendDistance: 20
   weight: 1
   sharedProfile: {fileID: 11400000, guid: dbc7c89d08528534cb96c0fec2f3d451, type: 2}
---- !u!114 &4141507850394274863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150837752688468564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 3e706a32cca65aa4b88d6554d2258662, type: 2}

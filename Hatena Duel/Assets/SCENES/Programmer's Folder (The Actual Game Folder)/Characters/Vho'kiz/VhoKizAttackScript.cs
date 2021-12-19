@@ -10,35 +10,66 @@ public partial class VhoKizScript : CharacterBase
     public GameObject Orb;
     public GameObject Laser;
 
-    protected override void Attack()
+    public override void OnHit(float dmg, float _rage)
     {
-        // ROCKET
-        if (Input.GetKey(PlayerSettings.Skill1Key) && Time.time > NextSkill1Time)
-        {
-            GameObject rocket = Instantiate(Rocket, transform.position + Vector3.up * (SR.size.y / 2), Quaternion.identity);
-            rocket.GetComponent<ConsciousMissiles>().playerWhoLaunchedTheRocket = gameObject;
+        health = Mathf.Clamp(health - dmg, 0, maxHealth);
 
-            NextSkill1Time = Time.time + Skill1Cooldown;
-        }
-        // ORB
-        if (Input.GetKey(PlayerSettings.Skill2Key) && Time.time > NextSkill2Time)
-        {
-            GameObject orb = Instantiate(Orb, transform.position + Vector3.up * (SR.size.y / 2), Quaternion.identity);
-            orb.GetComponent<MagneticStarScript>().playerWhoCreatedTheOrb = gameObject;
+        if (!UltimateSkillIsRunning)
+            rage = Mathf.Clamp(rage + _rage, 0, maxRage);
+    }
 
-            NextSkill2Time = Time.time + Skill2Cooldown;
-        }
-        // LASER
-        if (Input.GetKey(PlayerSettings.Skill3Key) && Time.time > NextSkill3Time)
-        {
-            GameObject laser = Instantiate(Laser, transform.position + Vector3.up * (SR.size.y / 2), Quaternion.identity);
-            laser.GetComponent<SuperNovaScript>().playerWhoShotTheSupernova = gameObject;
+    protected override void DoSkill1()
+    {
+        GameObject rocket = Instantiate(Rocket, Rocket.transform.position, Quaternion.identity);
+        rocket.GetComponent<AttackBase>().PlayerWhoCastedTheSkill = gameObject;
 
-            NextSkill3Time = Time.time + Skill3Cooldown;
-        }
-        if (Input.GetKey(PlayerSettings.UltimateAttKey) && !UltimateSkillIsRunning)
+        if (UltimateSkillIsRunning)
         {
-
+            rocket.transform.localScale *= new Vector2(2, 2);
+            rocket.transform.GetChild(0).localScale = new Vector3(2, 2, 2);
         }
+
+        NextSkill1Time = Time.time + Skill1Cooldown;
+    }
+
+    protected override void DoSkill2()
+    {
+        GameObject orb = Instantiate(Orb, Orb.transform.position, Quaternion.identity);
+        orb.GetComponent<AttackBase>().PlayerWhoCastedTheSkill = gameObject;
+
+        if (UltimateSkillIsRunning)
+            orb.transform.localScale *= new Vector2(2, 2);
+
+        NextSkill2Time = Time.time + Skill2Cooldown;
+    }
+
+    protected override void DoSkill3()
+    {
+        GameObject laser = Instantiate(Laser, Laser.transform.position, Quaternion.identity);
+        laser.GetComponent<AttackBase>().PlayerWhoCastedTheSkill = gameObject;
+
+        if (UltimateSkillIsRunning)
+            laser.GetComponent<SuperNovaScript>().IncreaseLaserWidth(2);
+
+        NextSkill3Time = Time.time + Skill3Cooldown;
+    }
+
+    protected override void DoUltimate()
+    {
+        AudioManager.Play("vhokiz_ult_charge");
+
+        UltimateSkillIsRunning = true;
+        UltimateFinishTime = Time.time + UltimateSkillDuration;
+    }
+
+    protected override void DoingUltimate()
+    {
+        if (Time.time > UltimateFinishTime) // ult duration finished
+        {
+            rage = 0;
+            UltimateSkillIsRunning = false;
+        }
+        else // ult still running, decrease rage here
+            rage = maxRage * ((UltimateFinishTime - Time.time) / UltimateSkillDuration);
     }
 }

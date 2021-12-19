@@ -54,7 +54,7 @@ Rigidbody2D:
   m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4787410264798173962
@@ -91,6 +91,7 @@ MonoBehaviour:
   health: 0
   maxRage: 100
   rage: 0
+  SkillList: []
   Skill1Cooldown: 0
   Skill2Cooldown: 0
   Skill3Cooldown: 0
@@ -98,19 +99,15 @@ MonoBehaviour:
   NextSkill1Time: 0
   NextSkill2Time: 0
   NextSkill3Time: 0
-  NextUltimateTime: 0
+  UltimateFinishTime: 0
   Skill1IsOnCD: 0
   Skill2IsOnCD: 0
   Skill3IsOnCD: 0
   UltimateSkillIsRunning: 0
-  Skill1: Conscious Missiles
-  Skill2: Magnetic Star
-  Skill3: Supernova
-  UltimateSkill: Control Matter
-  Skill1Desc: Resets CD to .5 if enemy is hit.
-  Skill2Desc: Follows the opponent faster if far, slower if near, for 4 seconds.
-  Skill3Desc: Fires a laser at the direction of the Vhokiz to the cursor.
-  UltimateSkillDesc: Skills become bigger; Vhokiz movements are enhanced.
+  Skill1Name: 
+  Skill2Name: 
+  Skill3Name: 
+  UltimateSkillName: 
   Rocket: {fileID: 8915512249690013189, guid: b4a52808467e1bf428c9be0ba96ef13c, type: 3}
   Orb: {fileID: 2183276897824809934, guid: 75eb2cbc991e8bb44bfd4f92ef47efd7, type: 3}
   Laser: {fileID: 1150837752688468564, guid: caa2781daef002a47a70f624bb635fb1, type: 3}
