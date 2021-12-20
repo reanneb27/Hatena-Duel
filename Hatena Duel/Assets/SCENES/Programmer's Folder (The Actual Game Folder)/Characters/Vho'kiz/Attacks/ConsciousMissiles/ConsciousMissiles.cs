@@ -83,7 +83,7 @@ public class ConsciousMissiles : AttackBase
                 if (character is VhoKizScript)
                     character.NextSkill1Time += (1 - (character.Skill1Cooldown - (1 - Mathf.Clamp(character.NextSkill1Time - Time.time, 0, character.Skill1Cooldown)))) * 0.8f;
 
-                enemy.OnHit(damage * Mathf.Abs(rb.velocity.x), rage / 2);
+                enemy.OnHit(damage * Mathf.Abs(rb.velocity.x), rage * 2.5f);
                 player.OnHit(0, rage);
             }
 

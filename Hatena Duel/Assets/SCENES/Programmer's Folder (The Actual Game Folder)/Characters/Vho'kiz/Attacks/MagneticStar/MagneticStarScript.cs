@@ -69,7 +69,7 @@ public class MagneticStarScript : AttackBase
     {
         if (collision.tag == enemyLayer)
         {
-            enemy.OnHit(damage, rage / 2);
+            enemy.OnHit(damage, rage * 2.5f);
             player.OnHit(0, rage);
             Destroy();
         }

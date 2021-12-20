@@ -18,7 +18,7 @@ public class BoomerangScript : AttackBase
 
     private void Awake()
     {
-        damage = 22f;
+        damage = 28f;
         rage = 5f;
     }
 
@@ -74,7 +74,7 @@ public class BoomerangScript : AttackBase
     {
         if (collision.gameObject.tag == enemyLayer && canDamage)
         {
-            enemy.OnHit(damage, rage / 1.5f);
+            enemy.OnHit(damage, 1f);
             player.OnHit(0, rage);
             canDamage = false;
         }

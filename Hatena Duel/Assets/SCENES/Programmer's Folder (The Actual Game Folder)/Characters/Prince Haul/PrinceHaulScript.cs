@@ -35,8 +35,8 @@ public partial class PrinceHaulScript : CharacterBase
         Skill3Name = Skill3;
         UltimateSkillName = UltimateSkill;
 
-        maxHealth = 1700;
-        health = 1700;
+        maxHealth = 2100;
+        health = 2100;
         maxRage = 100;
         rage = 0;
     }

@@ -33,15 +33,15 @@ public partial class ArkaynScript : CharacterBase
         Skill1Cooldown = 3;
         Skill2Cooldown = 9;
         Skill3Cooldown = 5;
-        UltimateSkillDuration = 9;
+        UltimateSkillDuration = 5;
 
         Skill1Name = Skill1;
         Skill2Name = Skill2;
         Skill3Name = Skill3;
         UltimateSkillName = UltimateSkill;
 
-        maxHealth = 800;
-        health = 800;
+        maxHealth = 1300;
+        health = 1300;
         maxRage = 100;
         rage = 0;
     }

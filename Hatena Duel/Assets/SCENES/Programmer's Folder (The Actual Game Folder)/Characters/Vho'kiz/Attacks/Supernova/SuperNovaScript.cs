@@ -158,7 +158,7 @@ public class SuperNovaScript : AttackBase
                 if (enemyWasHit && Time.time > nextRageTime)
                 {
                     nextRageTime = Time.time + rageRate;
-                    enemy.OnHit(0, rage / 2);
+                    enemy.OnHit(0, rage * 2.5f);
                     player.OnHit(0, rage);
                 }
 

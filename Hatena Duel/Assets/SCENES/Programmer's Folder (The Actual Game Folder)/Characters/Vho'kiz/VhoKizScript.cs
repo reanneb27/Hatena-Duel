@@ -30,7 +30,7 @@ public partial class VhoKizScript : CharacterBase
         isGrounded = true;
 
         Skill1Cooldown = 2;
-        Skill2Cooldown = 3;
+        Skill2Cooldown = 4;
         Skill3Cooldown = 7;
         UltimateSkillDuration = 9;
 
@@ -39,8 +39,8 @@ public partial class VhoKizScript : CharacterBase
         Skill3Name = Skill3;
         UltimateSkillName = UltimateSkill;
 
-        maxHealth = 1100;
-        health = 1100;
+        maxHealth = 1800;
+        health = 1800;
         maxRage = 100;
         rage = 0;
     }

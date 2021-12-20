@@ -28,8 +28,8 @@ public class ArenaScript : MonoBehaviour
 
     // Countdown fields
     public TextMeshProUGUI CountdownUI;
-    int countdownSeconds = 120;
-    int currentCountdownSeconds = 120;
+    int countdownSeconds = 180;
+    int currentCountdownSeconds = 180;
     float countdownEndingTime;
 
     // Character Profile Sprites
@@ -207,7 +207,7 @@ public class ArenaScript : MonoBehaviour
             currentCountdownSeconds = (int)(countdownEndingTime - Time.time);
             int minutes = currentCountdownSeconds / 60;
             int secs = currentCountdownSeconds - minutes * 60;
-            string countdownStringFormat = minutes + ":" + secs;
+            string countdownStringFormat = minutes.ToString("00") + ":" + secs.ToString("00");
             CountdownUI.text = countdownStringFormat;
             // --------------------------------------------------------------- //
 
@@ -235,6 +235,10 @@ public class ArenaScript : MonoBehaviour
 
 
             // check if GAME OVER
+            if (Player1Character is ArkaynScript && Player1Character.health == 0 && Player1Character.UltimateSkillIsRunning)
+                return;
+            if (Player2Character is ArkaynScript && Player2Character.health == 0 && Player2Character.UltimateSkillIsRunning)
+                return;
             if (currentCountdownSeconds == 0 || Player1Character.health == 0 || Player2Character.health == 0)
             {
                 gameOver = true;
@@ -254,6 +258,8 @@ public class ArenaScript : MonoBehaviour
                     }
                     else
                         Player2Character.ChangeAnimationState(CharacterBase.CharacterState.DEATH);
+                    Player1Character.isDead = true;
+                    Player2Character.isDead = true;
                 }
 
                 // set gameover UI text and images first, then set it to active
@@ -297,7 +303,7 @@ public class ArenaScript : MonoBehaviour
                     StoneText2.text = "";
                 }
 
-                StartCoroutine(StartGameOverUIDelayed(2));
+                StartCoroutine(StartGameOverUIDelayed(3.5f));
             }
         }
     }
