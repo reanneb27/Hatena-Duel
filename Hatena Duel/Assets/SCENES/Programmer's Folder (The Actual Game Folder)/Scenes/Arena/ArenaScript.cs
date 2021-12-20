@@ -243,6 +243,12 @@ public class ArenaScript : MonoBehaviour
             {
                 gameOver = true;
 
+                Player1Character.isDead = true;
+                Player2Character.isDead = true;
+
+                Player1Character.ChangeAnimationState(CharacterBase.CharacterState.IDLE);
+                Player2Character.ChangeAnimationState(CharacterBase.CharacterState.IDLE);
+
                 // check which player won
                 if (currentCountdownSeconds == 0)
                 {
@@ -258,8 +264,6 @@ public class ArenaScript : MonoBehaviour
                     }
                     else
                         Player2Character.ChangeAnimationState(CharacterBase.CharacterState.DEATH);
-                    Player1Character.isDead = true;
-                    Player2Character.isDead = true;
                 }
 
                 // set gameover UI text and images first, then set it to active

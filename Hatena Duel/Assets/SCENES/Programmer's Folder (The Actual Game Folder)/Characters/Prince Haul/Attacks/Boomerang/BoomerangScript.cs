@@ -18,7 +18,7 @@ public class BoomerangScript : AttackBase
 
     private void Awake()
     {
-        damage = 28f;
+        damage = 27f;
         rage = 5f;
     }
 
